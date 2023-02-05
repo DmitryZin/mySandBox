@@ -1,0 +1,66 @@
+databaseChangeLog:
+  - changeSet:
+      id: rudata-db/v1.0.1/schema/create_schema_rudata.sql
+      author: d.zinovev
+      changes:
+        - sqlFile:
+            path: changelog/schema/create_schema_rudata.sql
+            relativeToChangelogFile: true
+            splitStatements: false
+      validCheckSum:
+        - ANY
+
+  - changeSet:
+      id: rudata-db/v1.0.1/tables/rudata_required_security.sql
+      author: d.zinovev
+      changes:
+        - sqlFile:
+            path: changelog/tables/rudata_required_security.sql
+            relativeToChangelogFile: true
+            splitStatements: false
+      validCheckSum:
+        - ANY
+
+  - changeSet:
+      id: rudata-db/v1.0.1/tables/rudata_method.sql
+      author: d.zinovev
+      changes:
+        - sqlFile:
+            path: changelog/tables/rudata_method.sql
+            relativeToChangelogFile: true
+            splitStatements: false
+      validCheckSum:
+        - ANY
+
+  - changeSet:
+      id: rudata-db/v1.0.1.3/procedures/rudata_required_security_save.sql
+      author: d.zinovev
+      changes:
+        - sqlFile:
+            path: changelog/procedures/rudata_required_security_save.sql
+            relativeToChangelogFile: true
+            splitStatements: false
+      validCheckSum:
+        - ANY
+
+  - changeSet:
+      id: rudata-db/v1.0.1.2/functions/rudata_required_security_get.sql
+      author: d.zinovev
+      changes:
+        - sqlFile:
+            path: changelog/functions/rudata_required_security_get.sql
+            relativeToChangelogFile: true
+            splitStatements: false
+      validCheckSum:
+        - ANY
+
+  - changeSet:
+      id: rudata-db/v1.0.1.1/procedures/rudata_required_security_delete.sql
+      author: d.zinovev
+      changes:
+        - sqlFile:
+            path: changelog/procedures/rudata_required_security_delete.sql
+            relativeToChangelogFile: true
+            splitStatements: false
+      validCheckSum:
+        - ANY
