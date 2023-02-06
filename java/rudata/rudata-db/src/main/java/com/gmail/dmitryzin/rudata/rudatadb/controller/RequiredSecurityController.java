@@ -1,6 +1,7 @@
 package com.gmail.dmitryzin.rudata.rudatadb.controller;
 
 import com.gmail.dmitryzin.rudata.rudatadb.converter.RequiredSecurityConverter;
+import com.gmail.dmitryzin.rudata.rudatadb.dto.Paginator;
 import com.gmail.dmitryzin.rudata.rudatadb.dto.RequiredSecurityDto;
 import com.gmail.dmitryzin.rudata.rudatadb.service.RequiredSecurityService;
 import lombok.RequiredArgsConstructor;
@@ -17,6 +18,11 @@ public class RequiredSecurityController {
     @GetMapping("/required_security/{isin}")
     public List<RequiredSecurityDto> getRequiredSecurityDtoList(@PathVariable String isin){
         return RequiredSecurityConverter.convertRequiredSecurityList(requiredSecurityService.getRequiredSecurity(isin).orElseThrow());
+    }
+
+    @GetMapping("/required_security/get")
+    public List<RequiredSecurityDto> getRequiredSecurityDtoListPaginated(Paginator paginator){
+        return RequiredSecurityConverter.convertRequiredSecurityList(requiredSecurityService.getRequiredSecurityPaginated(paginator).orElseThrow());
     }
 
     @PostMapping("/required_security/add")

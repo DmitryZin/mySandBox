@@ -1,0 +1,31 @@
+do
+$do$
+    begin
+        insert into rudata.required_security(isin)
+        values
+             ('RU000A0D9AF5')
+            ,('RU000A0JRKT8')
+            ,('RU000A0ET1Z7')
+            ,('RU0009062467')
+            ,('RU0007661625')
+            ,('RU000A0JNG55')
+            ,('RU0009024277')
+            ,('RU000A0J2Q06')
+            ,('RU000A0JP5V6')
+            ,('RU0009029557')
+            ,('RU0006944147')
+            ,('RU0007976965')
+            ,('RU000A0JPGA0')
+            ,('RU0009084396')
+            ,('RU000A0JR4A1')
+            ,('RU0007775219')
+            ,('RU0009046452')
+            ,('RU0009084446')
+            ,('RU0009046510')
+            ,('RU000A0JPNN9')
+            ,('RU000A0JKQU8')
+            ,('RU000A1037V8')
+            ,('RU000A102N02')
+        on conflict ("isin") do nothing;
+    end
+$do$

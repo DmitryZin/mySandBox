@@ -2,6 +2,7 @@ package com.gmail.dmitryzin.rudata.rudatadb.service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.gmail.dmitryzin.rudata.rudatadb.dto.Paginator;
 import com.gmail.dmitryzin.rudata.rudatadb.entity.RequiredSecurity;
 import com.gmail.dmitryzin.rudata.rudatadb.repository.RequiredSecurityRepository;
 import lombok.RequiredArgsConstructor;
@@ -21,6 +22,11 @@ public class RuDataRequiredSecurityService implements RequiredSecurityService{
     @Override
     public Optional<List<RequiredSecurity>> getRequiredSecurity(String isin){
         return requiredSecurityRepository.getByIsin(isin);
+    }
+
+    @Override
+    public Optional<List<RequiredSecurity>> getRequiredSecurityPaginated(Paginator paginator){
+        return requiredSecurityRepository.getByPageNum(paginator.getPageNum(), paginator.getPageCount());
     }
 
     @Override

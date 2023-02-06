@@ -64,3 +64,25 @@ databaseChangeLog:
             splitStatements: false
       validCheckSum:
         - ANY
+
+  - changeSet:
+      id: rudata-db/v1.0.1.1/functions/rudata_required_security_get_paginated.sql
+      author: d.zinovev
+      changes:
+        - sqlFile:
+            path: changelog/functions/rudata_required_security_get.sql
+            relativeToChangelogFile: true
+            splitStatements: false
+      validCheckSum:
+        - ANY
+
+  - changeSet:
+      id: rudata-db/v1.0.1.1/data/required_security_add.sql
+      author: d.zinovev
+      changes:
+        - sqlFile:
+            path: changelog/data/required_security_add.sql
+            relativeToChangelogFile: true
+            splitStatements: false
+      validCheckSum:
+        - ANY

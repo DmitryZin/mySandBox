@@ -17,14 +17,20 @@ public interface RequiredSecurityRepository extends CrudRepository<RequiredSecur
             """)
     void saveRequiredSecurityFromDto(@Param("dto") String dto);
 
-    @Query("""
-        select * from rudata.required_security_get(:isin)
-        """)
-    Optional<List<RequiredSecurity>> getByIsin(@Param("isin") String isin);
-
     @Modifying
     @Query("""
             call rudata.required_security_delete(:isin)
             """)
     void deleteIsin(@Param("isin") String isin);
+
+    @Query("""
+        select * from rudata.required_security_get(:isin)
+        """)
+    Optional<List<RequiredSecurity>> getByIsin(@Param("isin") String isin);
+
+    @Query("""
+        select * from rudata.required_security_get_paginated(:page_num, :page_count)
+        """)
+    Optional<List<RequiredSecurity>> getByPageNum(@Param("page_num") int page_num, @Param("page_count") int page_count);
+
 }
